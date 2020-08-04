@@ -43,6 +43,9 @@ public class Resourcetype implements EntityWithAnyElement {
     @Element(required = false)
     private Collection collection;
 
+    @Element(required = false)
+    private Filecollection filecollection;
+
     private Principal principal;
 
     private List<org.w3c.dom.Element> any;
@@ -79,7 +82,15 @@ public class Resourcetype implements EntityWithAnyElement {
 		this.principal = principal;
 	}
 
-	/**
+    public Filecollection getFilecollection() {
+        return filecollection;
+    }
+
+    public void setFilecollection(Filecollection filecollection) {
+        this.filecollection = filecollection;
+    }
+
+    /**
      * Gets the value of the any property.
      * 
      * <p>
