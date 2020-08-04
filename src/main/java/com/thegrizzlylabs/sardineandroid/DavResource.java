@@ -352,6 +352,9 @@ public class DavResource {
                     if (rt.getCollection() != null) {
                         resourceTypes.add(SardineUtil.createQNameWithDefaultNamespace("collection"));
                     }
+                    if (rt.getFilecollection() != null) {
+                        resourceTypes.add(SardineUtil.createQNameWithDefaultNamespace("filecollection")); // custom icewarp
+                    }
                     if (rt.getPrincipal() != null) {
                         resourceTypes.add(SardineUtil.createQNameWithDefaultNamespace("principal"));
                     }
