@@ -233,6 +233,10 @@ public final class SardineUtil {
         return createDocument().createElementNS(key.getNamespaceURI(), key.getPrefix() + ":" + key.getLocalPart());
     }
 
+    public static Element createNonPrefixElement(QName key) {
+        return createDocument().createElementNS(key.getNamespaceURI(), key.getLocalPart());
+    }
+
     /**
      * @param key Fully qualified element name.
      */

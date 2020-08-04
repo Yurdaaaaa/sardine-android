@@ -164,7 +164,12 @@ public class OkHttpSardine implements Sardine {
     private void addCustomProperties(Prop prop, java.util.Set<QName> props) {
         List<Element> any = prop.getAny();
         for (QName entry : props) {
-            Element element = SardineUtil.createElement(entry);
+            Element element = null;
+            if (entry.getPrefix() != null && !entry.getPrefix().isEmpty()) {
+                element = SardineUtil.createElement(entry);
+            } else {
+                element = SardineUtil.createNonPrefixElement(entry);
+            }
             any.add(element);
         }
     }
